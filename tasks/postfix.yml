@@ -1,0 +1,14 @@
+---
+- name: Set Postfix
+  template: 
+    src: main.cf.j2
+    dest: /etc/postfix/main.cf
+    owner: root
+    group: root
+    mode: 0600
+
+- name: Start and enable Postfix server
+  service:
+    name: postfix
+    state: started
+    enabled: yes
