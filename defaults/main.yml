@@ -65,4 +65,4 @@ gitlab_email_reply_to: "gitlab@example.com"
 gitlab_http_server_name: "gitlab.example.com"
 
 # postfix
-postfix_inet_interface: "localhost"  #or 127.0.0.1
+postfix_inet_interface: "localhost"  # or 127.0.0.1
