@@ -16,7 +16,7 @@ gitlab_ssl_dhparam: "/etc/gitlab/ssl/dhparams.pem"
 # SSL Self-signed Certificate Configuration.
 gitlab_create_self_signed_cert: "true"
 gitlab_self_signed_cert_subj: |
-  "/C=CN/ST=Guang Dong/L=Fo\ Shan/O=IT/CN={{ gitlab_http_server_name }}/challengePassword=123456"
+  "/C=CN/ST=Guang\ Dong/L=Fo\ Shan/O=IT/CN={{ gitlab_http_server_name }}/challengePassword=123456"
 
 # LDAP Configuration.
 gitlab_ldap_enabled: "false"
