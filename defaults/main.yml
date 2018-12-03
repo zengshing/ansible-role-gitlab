@@ -15,7 +15,8 @@ gitlab_ssl_dhparam: "/etc/gitlab/ssl/dhparams.pem"
 
 # SSL Self-signed Certificate Configuration.
 gitlab_create_self_signed_cert: "true"
-gitlab_self_signed_cert_subj: "/C=CN/ST=Guang Dong/L=Fo Shan/O=IT/CN={{ gitlab_http_server_name }}/challengePassword=123456"
+gitlab_self_signed_cert_subj: |
+  "/C=CN/ST=Guang Dong/L=Fo Shan/O=IT/CN={{ gitlab_http_server_name }}/challengePassword=123456"
 
 # LDAP Configuration.
 gitlab_ldap_enabled: "false"
@@ -44,7 +45,7 @@ gitlab_smtp_ca_file: "/etc/ssl/certs/ca-certificates.crt"
 # 2-way SSL Client Authentication support.
 gitlab_nginx_ssl_verify_client: ""
 gitlab_nginx_ssl_client_certificate: ""
- 
+
 # Probably best to leave this as the default, unless doing testing.
 gitlab_restart_handler_failed_when: 'gitlab_restart.rc != 0'
 
@@ -60,8 +61,8 @@ gitlab_email_from: "gitlab@example.com"
 gitlab_email_display_name: "Gitlab"
 gitlab_email_reply_to: "gitlab@example.com"
 
-#nginx
+# nginx
 gitlab_http_server_name: "gitlab.example.com"
 
-#postfix
+# postfix
 postfix_inet_interface: "localhost"  #or 127.0.0.1

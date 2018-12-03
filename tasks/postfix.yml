@@ -1,6 +1,6 @@
 ---
 - name: Set Postfix
-  template: 
+  template:
     src: main.cf.j2
     dest: /etc/postfix/main.cf
     owner: root

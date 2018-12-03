@@ -10,7 +10,7 @@
   stat: path=/usr/bin/gitlab-ctl
   register: gitlab_file
 
-#Install GitLab and its dependencies
+# Install GitLab and its dependencies
 - name: Install GitLab dependencies
   yum: name={{ item }} state=present
   loop:
@@ -24,7 +24,7 @@
 - name: postfix | Set postfix server
   import_tasks: postfix.yml
 
-#国内源
+# 国内源
 - name: Add GitLab repository
   copy:
     remote_src: false
@@ -63,7 +63,8 @@
 
 - name: Create self-signed certificate
   command: >
-    openssl req -new -nodes -x509 -subj "{{ gitlab_self_signed_cert_subj }}" -days 3650 -keyout {{ gitlab_ssl_certificate_key }} -out {{ gitlab_ssl_certificate }} -extensions v3_ca
+    openssl req -new -nodes -x509 -subj "{{ gitlab_self_signed_cert_subj }}" -days 3650 \
+    -keyout {{ gitlab_ssl_certificate_key }} -out {{ gitlab_ssl_certificate }} -extensions v3_ca
     creates={{ gitlab_ssl_certificate }}
   when: gitlab_create_self_signed_cert
 
